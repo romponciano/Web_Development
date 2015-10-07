@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pe na Estrada</title>
+	<base target="_blank" />
+	<link rel="stylesheet" type="text/css" href="css/penaestrada.css" />
+	<script>
+		tabPrecos = [ 70, 50, 30 ];
+		tabQuartos = [ "Duplo", "Triplo", "Múltiplo" ];
+		
+		function MostraPreco( nq ) {
+			var preco = document.getElementById("precoTotal");
+			preco.innerHTML = "Quarto " + tabQuartos[nq] + ", 7 dias, <span class='destac'>R$ " 
+								+ (7 * tabPrecos[nq] + 500) + ",00</span>";
+		}
+		
+		function CriaBotoes() {
+			for ( i = 0; i < tabQuartos.length; i++ ) {
+				document.write('<th><input type="button" value="');
+				document.write(tabQuartos[i]);
+				document.write('" OnClick="MostraPreco(' + i);
+				document.write(');" /></th>');
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<img src="imgs/PeNaEstradaDeitado.png" class="imgLogo"/>
+	</header>
+	<nav>
+		<ul class="menu">
+			<li><a href="destinos.html">Destinos</a></li>
+			<li><a href="pacotes.html">Pacotes</a></li>
+			<li><a href="cadastro.html">Cadastro</a></li>
+			<li><a href="reservas.html">Reservas</a></li>
+		</ul>
+		<br/><br/>
+	</nav>
+	
+	<section>
+		<form>
+			<table class="tabPac">
+				<tr>
+					<th colspan="3" class="linImgPac">
+						<span class="destac">7 dias</span> em Arraial da Ajuda<br/><br/>
+						<img src="imgs/pac_ajuda.jpg" />
+					</th>
+				</tr>
+				<tr>
+					<th rowspan="2" class="colLegPac">Transportes<br/>Inclusos</th>
+					<td class="colDestac">Aéreo</td>
+					<td>Teco Teco Air Lines</td>
+				</tr>
+				<tr>
+					<td class="colDestac">Translado</td>
+					<td>Viação Boleia</td>
+				</tr>
+				<tr>
+					<th class="colLegPac">Opções de<br/>Hospedagem</th>
+					<td colspan="2">
+						<table class="tabInterna">
+							<tr>
+								<th colspan="3">Pousada Pelado na Praia</th>
+								<tr><script>CriaBotoes();</script></tr>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<th class="colLegPac">Preço por Pessoa</th>
+					<th colspan="2" class="colDestac" id="precoTotal"><span class="destac">R$ 500,00</span> + 7 x Diária do Quarto</th>
+				</tr>
+			</table>
+			<br/>
+		</form>
+	</section>
+	
+	<footer>
+		<address class="ender">
+			Estrada da Mochila 234<br/>Tel: (21) 1234-5678<br/>
+			<a href="mailto:contato@penaestrada.com.br">
+			contato@penaestrada.com.br</a>
+		</address>
+	</footer>
+</body>
+</html>

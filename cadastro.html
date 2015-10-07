@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pe na Estrada</title>
+	<base target="_blank" />
+	<link rel="stylesheet" type="text/css" href="css/penaestrada.css" />
+	<script>
+		// verificar telefone
+		function VerificaTelef( ident, campo ) {
+			var i, c;
+			var strTel = campo.value;
+			if ( strTel.length != 8 ) {
+				alert(ident + " tem de ter 8 dígitos!");
+				return false;
+			}
+			for ( i = 0; i < 8; i++ ) {
+				c = strTel.charAt(i);
+				if ( (c < '0') || (c > '9')) {
+					alert(ident + " só pode ter dígitos, caracter " + c + " inválido!");
+					return false;
+				}
+			}
+			return true;
+		}
+		
+		// calcular valor
+		function calculaDV(num) {
+			var resto = 0, soma = 0;
+			for ( i = 2; i < 11; i++ ) {
+				soma = soma + ((num % 10) * i);
+				num = parseInt(num / 10);
+			}
+			resto = (soma % 11);
+			return (resto > 1) ? (11 - resto) : 0;
+		}
+		
+		// verificar cpf
+		function VerificaCPF( campo ) {
+			var i, c, cpf;
+			var iniCPF;
+			var strCPF = campo.value;
+			if ( strCPF.length != 11 ) {
+				alert("CPF tem de ter 11 dígitos!");
+				return false;
+			}
+			for ( i = 0; i < 11; i++ ) {
+				c = strCPF.charAt(i);
+				if ( (c < '0') || (c > '9')) {
+					alert("CPF só pode ter dígitos, caracter " + c + " inválido!");
+					return false;
+				}
+			}
+			iniCPF = strCPF.substring(0, 9);
+			pd = calculaDV(iniCPF);
+			sd = calculaDV(iniCPF * 10 + pd);
+			if ((pd != strCPF.charAt(9)) || (sd != strCPF.charAt(10))) {
+				alert("Dígitos verificadores inválidos!");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<img src="imgs/PeNaEstradaDeitado.png" class="imgLogo"/>
+	</header>
+	<nav>
+		<ul class="menu">
+			<li><a href="destinos.html">Destinos</a></li>
+			<li><a href="pacotes.html">Pacotes</a></li>
+			<li><a href="cadastro.html">Cadastro</a></li>
+			<li><a href="reservas.html">Reservas</a></li>
+		</ul>
+		<br/><br/>
+	</nav>
+	
+	<section>
+		<form method="POST">
+			<fieldset class="fsForm">
+				<legend> Dados de Identificação&nbsp;</legend>
+				<br/><label for="email" class="lab70">Email: </label>
+					<input type="email" name="TxtEmail" id="email" class="ent360Form" /><br/>
+				<br/><label for="passwd" class="lab70">Senha: </label>
+					<input type="password" name="TxtSenha" id="passwd" class="ent120Form" />
+				<label for="confirm" class="labConfirme"> Confirme:</label>
+					<input type="password" name="TxtConfirmaSenha" id="confirm" class="ent120Form" /><br/>
+			</fieldset>
+			<fieldset class="fsForm">
+				<legend> Dados Pessoais&nbsp;</legend>
+				<br/><label for="nome" class="lab70">Nome: </label>
+					<input type="text" class="ent360Form" id="nome" name="TxtNome" /><br/>
+				<br/><label for="cpf" class="lab70">Cpf: </label>
+					<input type="text" class="ent120Form" id="cpf" name="TxtCpf" onChange="VerificaCPF(this);" />
+				<label for="aniv" class="labNasc"> Nasc.: </label>
+					<input type="text" class="ent20Form" id="aniv" name="TxtDiaNasc" / > /
+					<input type="text" name="TxtMesNasc" class="ent20Form"/> /
+					<input type="text" name="TxtAnoNasc" class="ent40Form"/><br/>
+				<fieldset class="fsSexo">
+					<legend> Sexo&nbsp;</legend>
+					<input type="radio" value="M" checked name="TglSexo"> Masculino<br/>
+					<input type="radio" name="TglSexo" value="F"> Feminino<br/>
+				</fieldset><br/>
+			
+				<label for="tel" class="lab70">Telef.: </label>
+					<input type="text" class="ent120Form" id="tel" name="TxtTelefone" onchange="VerificaTelef('telefone fixo', this);" /><br/>
+				<br/><label for="cel" class="lab70">Celular: </label>
+					<input type="text" class="ent120Form" id="cel" name="TxtCelular" onchange="VerificaTelef('celular', this);" /><br/>
+			</fieldset>
+			<p class="entDireita">
+				<input type="submit" value="Enviar" name="BtnEnviar">
+				<input type="reset" value="Limpar" name="BtnLimpar">
+			</p>
+		</form>
+	</section>
+	
+	<footer>
+		<address class="ender">
+			Estrada da Mochila 234<br/>Tel: (21) 1234-5678<br/>
+			<a href="mailto:contato@penaestrada.com.br">
+			contato@penaestrada.com.br</a>
+		</address>
+	</footer>
+</body>
+</html>
