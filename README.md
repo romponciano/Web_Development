@@ -2,4 +2,6 @@
 
 Um trabalho realizado no 1º semestre da faculdade. 
 
-OBS.: o javascript encontra-se diretamente no cabeçalho de cada página (era um requisito do trabalho).
+OBS.: O javascript encontra-se diretamente no cabeçalho de cada página (era um requisito do trabalho).
+
+Ps.: Em breve irei implementar uma seção de login (conectando-se com um banco de dados) utilizando PHP.
