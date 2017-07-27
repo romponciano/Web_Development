@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pe na Estrada</title>
+	<base target="_blank" />
+	<link rel="stylesheet" type="text/css" href="css/penaestrada.css" />
+	<script>
+		function MostraCartoes() {
+			var cart = document.getElementById("cartoes");
+			cart.style.visibility = 'visible';
+		}
+		function EscondeCartoes() {
+			var cart = document.getElementById("cartoes");
+			cart.style.visibility = 'hidden';
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<img src="imgs/PeNaEstradaDeitado.png" class="imgLogo"/>
+	</header>
+	<nav>
+		<ul class="menu">
+			<li><a href="destinos.html">Destinos</a></li>
+			<li><a href="pacotes.html">Pacotes</a></li>
+			<li><a href="cadastro.html">Cadastro</a></li>
+			<li><a href="reservas.html">Reservas</a></li>
+		</ul>
+		<br/><br/>
+	</nav>
+	
+	<section>
+		<form method="POST">
+			<fieldset class="fsTopo">
+				<legend> Dados de Identificação&nbsp;</legend>
+				<br/><label for="email" class="lab60">Email: </label>
+					<input type="text" class="ent250Form" id="email" name="TxtEmail" />
+				<label for="senha" class="labSenha">Senha: </label>
+					<input type="password" class="ent120Form" id="senha" name="TxtSenha" /><br/>
+			</fieldset>
+			<fieldset class="fsResDir">
+				<legend> Forma de Pagamento&nbsp;</legend>
+				<br/><input type="radio" name="RadForma" id="car" OnClick="MostraCartoes();" checked />
+				<label for="car">Cartão</label>
+					<input type="radio" name="RadForma" id="che" OnClick="EscondeCartoes();" />
+				<label for="che">Cheque</label>
+					<input type="radio" name="RadForma" id="din" OnClick="EscondeCartoes();" />
+				<label for="din">Dinheiro</label><br/><br/>
+				<fieldset>
+					<legend> Dados do Cartão&nbsp;</legend>
+					<br/><input type="radio" name="RadBand" id="visa" checked />
+					<label for="visa"><img src="imgs/visa.png" /></label>
+						<input type="radio" name="RadBand" id="mast" />
+					<label for="mast"><img src="imgs/master.png" /></label>
+						<input type="radio" name="RadBand" id="amex" />
+					<label for="amex"><img src="imgs/amex.png" /></label><br/>
+					<br/><label for="val" class="lab90">Validade: </label>
+						<input type="text" class="ent20Form" id="val" name="TxtValMes" /> /
+						<input type="text" class="ent40Form" name="TxtValAno" /><br/>
+					<br/><label for="num" class="lab90">Numero: </label>
+						<input type=text class="ent120Form" id="num" name="TxtNumero" /><br/>
+				</fieldset>
+			</fieldset>
+			<fieldset class="fsResEsq">
+				<legend> Passeio Escolhido&nbsp;</legend>
+				<br/>De <input type="date" name="TxtInicio" class="entData" /><br/>
+				<br/>até <input type="date" name="TxtFinal" class="entData" /><br/>
+				<br/>Tipo de Quarto:
+				<select size="1" name="LstQuarto" class="entDireita">
+					<option selected>---</option>
+					<option>Duplo</option>
+					<option>Triplo</option>
+					<option>Múltiplo</option>
+				</select><br/>
+				<br/>Pacote: 
+				<select size="1" name="LstPacotes" class="entDireita">
+					<option selected>---</option>
+					<optgroup label="Nacional">
+						<option>Arraial da Ajuda</option>
+						<option>Ibitipoca</option>
+						<option>Visconde de Mauá</option>
+					</optgroup>
+					<optgroup label="Internacional">
+						<option>Colonia de Sacramento</option>
+						<option>Deserto de Atacama</option>
+						<option>Machu Picchu</option>
+					</optgroup>
+				</select><br/><br/>
+				<br/>Valor: R$ <input type="text" name="TxtValor" class="ent140Pac" /><br/><br/>
+			</fieldset>
+			<p class="entDireita">
+				<input type="submit" value="Enviar" name="BtnEnviar"/>
+				<input type="reset" value="Limpar" name="BtnLimpar"/>
+			</p>
+		</form>
+	</section>
+	
+	<footer>
+		<address class="ender">
+			Estrada da Mochila 234<br/>Tel: (21) 1234-5678<br/>
+			<a href="mailto:contato@penaestrada.com.br">
+			contato@penaestrada.com.br</a>
+		</address>
+	</footer>
+</body>
+</html>
