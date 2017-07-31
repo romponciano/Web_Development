@@ -1,7 +1,7 @@
-# Login page with PHP and MySQL
+# Ecommerce em desenvolvimento
 
 ### en-us
-This example with login and registration of accounts in an sql database. It was developed as pset7 in the CS50 course.
+Virtual store under development using HTML5, CSS, javascript and PHP.
 
 ### pt-br
-Este exemplo com login e registro de contas em um banco de dados sql. Foi desenvolvido como pset7 no curso CS50.
+Loja virtual em desenvolvimento utilizando HTML5, CSS, javascript e PHP.
