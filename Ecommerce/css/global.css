@@ -1,0 +1,83 @@
+body {
+	color: #333333;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	width: 940px;
+}
+
+.container {
+	padding: 0px;
+	margin: 0px;
+	width: 940px;
+}
+
+
+/* ------------------------- CABECALHO / HEADER */
+header {
+	position: relative;
+}
+
+.sacola {
+	background: url(../img/sacola.png) no-repeat top right;
+	font-size: 14px;
+	padding-right: 35px;
+	padding-top: 5px;
+	text-align: right;
+	width: 140px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.menu-opcoes {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.menu-opcoes ul {
+	font-size: 15px;
+}
+
+.menu-opcoes ul li {
+	display: inline;
+	margin-left: 20px;
+}
+
+.menu-opcoes a {
+	color: #003366;
+}
+
+
+/* ------------------------- RODAPE / FOOTER */
+footer {
+	background-image: url(../img/fundo-rodape.png);
+	clear: both;
+	padding: 20px 10px;
+}
+
+footer div {
+	margin-top: 10px;
+	margin-right: 30px;
+	float: right;
+}
+
+footer a {	
+	height: 32px;
+	width: 32px;
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+.facebook {
+	background-image: url(../img/facebook.png);
+}
+
+.google-plus {
+	background-image: url(../img/googleplus.png);
+}
+
+.twitter {
+	background-image: url(../img/twitter.png);
+}
